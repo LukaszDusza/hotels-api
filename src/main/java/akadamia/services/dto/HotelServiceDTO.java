@@ -8,6 +8,7 @@ import akadamia.repositories.RoomRepository;
 import akadamia.services.HotelService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -72,5 +73,9 @@ public class HotelServiceDTO implements HotelService<HotelDTO> {
   @Override
   public void deleteHotelByPartnerCode(String partnerCode) {
     hotelRepository.deleteHotelByPartnerCode(partnerCode);
+  }
+
+  @Override
+  public void addHotel(HotelDTO hotelDTO) {
   }
 }

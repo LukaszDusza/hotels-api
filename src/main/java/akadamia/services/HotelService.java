@@ -1,5 +1,8 @@
 package akadamia.services;
 
+import akadamia.models.dto.HotelDTO;
+import org.springframework.http.ResponseEntity;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -14,5 +17,7 @@ public interface HotelService<T> {
   Optional<T> getHotelByPartnerCode(String partnerCode);
 
   void deleteHotelByPartnerCode(String partnerCode);
+
+  void addHotel(HotelDTO hotelDTO);
 
 }
