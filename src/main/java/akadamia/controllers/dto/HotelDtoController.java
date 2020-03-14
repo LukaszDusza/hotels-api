@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/v1/dto")
+@RequestMapping("/api/v1/dto")
 public class HotelDtoController implements HotelService<HotelDTO> {
   private static final Logger logger = LoggerFactory.getLogger(HotelController.class);
 
