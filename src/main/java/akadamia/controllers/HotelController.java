@@ -2,7 +2,7 @@ package akadamia.controllers;
 
 import akadamia.models.dao.Hotel;
 import akadamia.models.dto.HotelDTO;
-import akadamia.services.HotelService;
+import akadamia.services.dao.HotelServiceDAO;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,23 +18,23 @@ import java.util.List;
 @RestController
 @RequestMapping("/v1")
 public class HotelController {
-  public static final Logger logger = LoggerFactory.getLogger(HotelController.class);
+  private static final Logger logger = LoggerFactory.getLogger(HotelController.class);
 
-  private HotelService hotelService;
+  private HotelServiceDAO hotelServiceDAO;
 
-  public HotelController(HotelService hotelService) {
-    this.hotelService = hotelService;
+  public HotelController(HotelServiceDAO hotelServiceDAO) {
+    this.hotelServiceDAO = hotelServiceDAO;
   }
 
 
   @GetMapping("/hotels/{id}/id")
   public ResponseEntity<Hotel> getHotelById(@PathVariable Long id) {
-    return ResponseEntity.ok(hotelService.getHotelById(id));
+    return ResponseEntity.ok(hotelServiceDAO.getHotelById(id));
   }
 
   @GetMapping("/hotels/{country}/country")
   public ResponseEntity<List<Hotel>> getHotelByCountry(@PathVariable String country) {
-    return ResponseEntity.ok(hotelService.getHotelsByCountry(country));
+    return ResponseEntity.ok(hotelServiceDAO.getHotelsByCountry(country));
   }
 
   @GetMapping("/hotels")
@@ -42,14 +42,9 @@ public class HotelController {
       @RequestParam(required = false) String country,
       @RequestParam(required = false) String rate) {
     if (StringUtils.isNotBlank(country) && StringUtils.isNotBlank(rate)) {
-      return ResponseEntity.ok(hotelService.getHotelsByCountryAndRate(country, rate));
+      return ResponseEntity.ok(hotelServiceDAO.getHotelsByCountryAndRate(country, rate));
     }
-    return ResponseEntity.ok(hotelService.getHotels());
-  }
-
-  @GetMapping("/hotels/dto")
-  public ResponseEntity<List<HotelDTO>> getHotels() {
-    return ResponseEntity.ok(hotelService.getHotelsDto());
+    return ResponseEntity.ok(hotelServiceDAO.getHotels());
   }
 
 }

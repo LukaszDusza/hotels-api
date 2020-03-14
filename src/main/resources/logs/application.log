@@ -384,3 +384,37 @@ java.lang.NullPointerException: null
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
+2020-03-14 | 11:34:15.895 | [] |  INFO | HotelsAppSpringApplication     | (    55) | Starting HotelsAppSpringApplication on desktop_devlab with PID 15648 (X:\akademia\grupy\java11online\hotels-app-spring\target\classes started by Abc in X:\akademia\grupy\java11online\hotels-app-spring)
+2020-03-14 | 11:34:15.897 | [] | DEBUG | HotelsAppSpringApplication     | (    56) | Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-14 | 11:34:15.898 | [] |  INFO | HotelsAppSpringApplication     | (   655) | The following profiles are active: dev
+2020-03-14 | 11:34:16.374 | [] |  INFO | RepositoryConfigurationDelegate | (   249) | Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-14 | 11:34:16.375 | [] |  INFO | RepositoryConfigurationDelegate | (   127) | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-03-14 | 11:34:16.406 | [] |  INFO | RepositoryConfigurationExtensionSupport | (   348) | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface akadamia.repositories.AddressRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-03-14 | 11:34:16.408 | [] |  INFO | RepositoryConfigurationExtensionSupport | (   348) | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface akadamia.repositories.HotelRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-03-14 | 11:34:16.409 | [] |  INFO | RepositoryConfigurationExtensionSupport | (   348) | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface akadamia.repositories.RoomRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-03-14 | 11:34:16.409 | [] |  INFO | RepositoryConfigurationDelegate | (   187) | Finished Spring Data repository scanning in 30ms. Found 0 JDBC repository interfaces.
+2020-03-14 | 11:34:16.415 | [] |  INFO | RepositoryConfigurationDelegate | (   249) | Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-14 | 11:34:16.415 | [] |  INFO | RepositoryConfigurationDelegate | (   127) | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-14 | 11:34:16.442 | [] |  INFO | RepositoryConfigurationDelegate | (   187) | Finished Spring Data repository scanning in 24ms. Found 3 JPA repository interfaces.
+2020-03-14 | 11:34:16.770 | [] |  INFO | TomcatWebServer                | (    92) | Tomcat initialized with port(s): 8080 (http)
+2020-03-14 | 11:34:16.776 | [] |  INFO | StandardService                | (   173) | Starting service [Tomcat]
+2020-03-14 | 11:34:16.777 | [] |  INFO | StandardEngine                 | (   173) | Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-14 | 11:34:16.831 | [] |  INFO | [/api]                         | (   173) | Initializing Spring embedded WebApplicationContext
+2020-03-14 | 11:34:16.832 | [] |  INFO | ContextLoader                  | (   284) | Root WebApplicationContext: initialization completed in 904 ms
+2020-03-14 | 11:34:16.921 | [] |  INFO | LogHelper                      | (    31) | HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-14 | 11:34:16.960 | [] |  INFO | Version                        | (    44) | HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-03-14 | 11:34:17.031 | [] |  INFO | Version                        | (    49) | HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-14 | 11:34:17.118 | [] |  INFO | HikariDataSource               | (   110) | HikariPool-1 - Starting...
+2020-03-14 | 11:34:17.189 | [] |  INFO | HikariDataSource               | (   123) | HikariPool-1 - Start completed.
+2020-03-14 | 11:34:17.199 | [] |  INFO | Dialect                        | (   172) | HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-14 | 11:34:17.615 | [] |  INFO | JtaPlatformInitiator           | (    52) | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-14 | 11:34:17.620 | [] |  INFO | LocalContainerEntityManagerFactoryBean | (   416) | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-14 | 11:34:17.879 | [] |  WARN | JpaBaseConfiguration$JpaWebConfiguration | (   220) | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-14 | 11:34:17.945 | [] |  INFO | ThreadPoolTaskExecutor         | (   181) | Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-14 | 11:34:18.012 | [] |  WARN | Configuration$DefaultTemplateResolverConfiguration | (   106) | Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-03-14 | 11:34:18.093 | [] |  INFO | TomcatWebServer                | (   204) | Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-03-14 | 11:34:18.094 | [] |  INFO | HotelsAppSpringApplication     | (    61) | Started HotelsAppSpringApplication in 2.451 seconds (JVM running for 3.062)
+2020-03-14 | 11:35:31.065 | [] |  INFO | [/api]                         | (   173) | Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-14 | 11:35:31.065 | [] |  INFO | DispatcherServlet              | (   525) | Initializing Servlet 'dispatcherServlet'
+2020-03-14 | 11:35:31.069 | [] |  INFO | DispatcherServlet              | (   547) | Completed initialization in 3 ms
+2020-03-14 | 11:35:31.181 | [] | DEBUG | HotelServiceDAO                | (    34) | Hotels: [akadamia.models.dao.Hotel@1cf8c4ab, akadamia.models.dao.Hotel@2e113150, akadamia.models.dao.Hotel@44c321ce, akadamia.models.dao.Hotel@4bea621b, akadamia.models.dao.Hotel@24fd452e, akadamia.models.dao.Hotel@3c16b50]

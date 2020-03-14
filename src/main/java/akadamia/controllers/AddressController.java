@@ -1,7 +1,7 @@
 package akadamia.controllers;
 
 import akadamia.models.dao.Address;
-import akadamia.services.AddressService;
+import akadamia.services.dao.AddressServiceDAO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,14 +12,14 @@ import java.util.List;
 @RequestMapping("/v1")
 public class AddressController {
 
-  private AddressService addressService;
+  private AddressServiceDAO addressServiceDAO;
 
-  public AddressController(AddressService addressService) {
-    this.addressService = addressService;
+  public AddressController(AddressServiceDAO addressServiceDAO) {
+    this.addressServiceDAO = addressServiceDAO;
   }
 
   @GetMapping("/addresses")
   public List<Address> getAddresses() {
-    return addressService.getAddresses();
+    return addressServiceDAO.getAddresses();
   }
 }
