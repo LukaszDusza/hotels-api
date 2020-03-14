@@ -13,4 +13,6 @@ public interface HotelService<T> {
 
   Optional<T> getHotelByPartnerCode(String partnerCode);
 
+  void deleteHotelByPartnerCode(String partnerCode);
+
 }

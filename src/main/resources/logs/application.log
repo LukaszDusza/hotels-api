@@ -797,3 +797,174 @@ java.lang.NullPointerException: null
 2020-03-14 | 12:43:25.695 | [] |  INFO | ApiListingReferenceScanner     | (    41) | Scanning for api listing references
 2020-03-14 | 12:43:25.795 | [] |  INFO | TomcatWebServer                | (   204) | Tomcat started on port(s): 8080 (http) with context path ''
 2020-03-14 | 12:43:25.796 | [] |  INFO | HotelsAppSpringApplication     | (    61) | Started HotelsAppSpringApplication in 2.854 seconds (JVM running for 3.484)
+2020-03-14 | 12:48:51.738 | [] |  INFO | [/]                            | (   173) | Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-14 | 12:48:51.738 | [] |  INFO | DispatcherServlet              | (   525) | Initializing Servlet 'dispatcherServlet'
+2020-03-14 | 12:48:51.742 | [] |  INFO | DispatcherServlet              | (   547) | Completed initialization in 4 ms
+2020-03-14 | 12:49:44.040 | [] | ERROR | [dispatcherServlet]            | (   175) | Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/v1/dto/hotels/Polska': {public java.util.List akadamia.controllers.dto.HotelDtoController.getHotelsByCountry(java.lang.String), public java.util.List akadamia.controllers.dto.HotelDtoController.getHotelsByCity(java.lang.String)}] with root cause
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/v1/dto/hotels/Polska': {public java.util.List akadamia.controllers.dto.HotelDtoController.getHotelsByCountry(java.lang.String), public java.util.List akadamia.controllers.dto.HotelDtoController.getHotelsByCity(java.lang.String)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:412)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-03-14 | 12:50:17.237 | [] | ERROR | [dispatcherServlet]            | (   175) | Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/v1/dto/hotels/polska': {public java.util.List akadamia.controllers.dto.HotelDtoController.getHotelsByCountry(java.lang.String), public java.util.List akadamia.controllers.dto.HotelDtoController.getHotelsByCity(java.lang.String)}] with root cause
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/v1/dto/hotels/polska': {public java.util.List akadamia.controllers.dto.HotelDtoController.getHotelsByCountry(java.lang.String), public java.util.List akadamia.controllers.dto.HotelDtoController.getHotelsByCity(java.lang.String)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:412)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-03-14 | 12:51:56.867 | [] |  INFO | HotelsAppSpringApplication     | (    55) | Starting HotelsAppSpringApplication on desktop_devlab with PID 14632 (X:\akademia\grupy\java11online\hotels-app-spring\target\classes started by Abc in X:\akademia\grupy\java11online\hotels-app-spring)
+2020-03-14 | 12:51:56.870 | [] | DEBUG | HotelsAppSpringApplication     | (    56) | Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-14 | 12:51:56.870 | [] |  INFO | HotelsAppSpringApplication     | (   655) | The following profiles are active: dev
+2020-03-14 | 12:51:57.434 | [] |  INFO | RepositoryConfigurationDelegate | (   249) | Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-14 | 12:51:57.435 | [] |  INFO | RepositoryConfigurationDelegate | (   127) | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-03-14 | 12:51:57.459 | [] |  INFO | RepositoryConfigurationExtensionSupport | (   348) | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface akadamia.repositories.AddressRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-03-14 | 12:51:57.461 | [] |  INFO | RepositoryConfigurationExtensionSupport | (   348) | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface akadamia.repositories.HotelRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-03-14 | 12:51:57.462 | [] |  INFO | RepositoryConfigurationExtensionSupport | (   348) | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface akadamia.repositories.RoomRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-03-14 | 12:51:57.463 | [] |  INFO | RepositoryConfigurationDelegate | (   187) | Finished Spring Data repository scanning in 24ms. Found 0 JDBC repository interfaces.
+2020-03-14 | 12:51:57.469 | [] |  INFO | RepositoryConfigurationDelegate | (   249) | Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-14 | 12:51:57.469 | [] |  INFO | RepositoryConfigurationDelegate | (   127) | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-14 | 12:51:57.490 | [] |  INFO | RepositoryConfigurationDelegate | (   187) | Finished Spring Data repository scanning in 20ms. Found 3 JPA repository interfaces.
+2020-03-14 | 12:51:57.811 | [] |  INFO | TomcatWebServer                | (    92) | Tomcat initialized with port(s): 8080 (http)
+2020-03-14 | 12:51:57.816 | [] |  INFO | StandardService                | (   173) | Starting service [Tomcat]
+2020-03-14 | 12:51:57.817 | [] |  INFO | StandardEngine                 | (   173) | Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-14 | 12:51:57.877 | [] |  INFO | [/]                            | (   173) | Initializing Spring embedded WebApplicationContext
+2020-03-14 | 12:51:57.878 | [] |  INFO | ContextLoader                  | (   284) | Root WebApplicationContext: initialization completed in 979 ms
+2020-03-14 | 12:51:57.973 | [] |  INFO | LogHelper                      | (    31) | HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-14 | 12:51:58.022 | [] |  INFO | Version                        | (    44) | HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-03-14 | 12:51:58.124 | [] |  INFO | Version                        | (    49) | HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-14 | 12:51:58.177 | [] |  INFO | HikariDataSource               | (   110) | HikariPool-1 - Starting...
+2020-03-14 | 12:51:58.250 | [] |  INFO | HikariDataSource               | (   123) | HikariPool-1 - Start completed.
+2020-03-14 | 12:51:58.260 | [] |  INFO | Dialect                        | (   172) | HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-14 | 12:51:58.674 | [] |  INFO | JtaPlatformInitiator           | (    52) | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-14 | 12:51:58.679 | [] |  INFO | LocalContainerEntityManagerFactoryBean | (   416) | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-14 | 12:51:59.012 | [] |  WARN | JpaBaseConfiguration$JpaWebConfiguration | (   220) | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-14 | 12:51:59.131 | [] |  INFO | ThreadPoolTaskExecutor         | (   181) | Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-14 | 12:51:59.185 | [] |  WARN | Configuration$DefaultTemplateResolverConfiguration | (   106) | Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-03-14 | 12:51:59.252 | [] |  INFO | DocumentationPluginsBootstrapper | (   120) | Context refreshed
+2020-03-14 | 12:51:59.261 | [] |  INFO | DocumentationPluginsBootstrapper | (   123) | Found 1 custom documentation plugin(s)
+2020-03-14 | 12:51:59.269 | [] |  INFO | ApiListingReferenceScanner     | (    41) | Scanning for api listing references
+2020-03-14 | 12:51:59.372 | [] |  INFO | TomcatWebServer                | (   204) | Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-14 | 12:51:59.374 | [] |  INFO | HotelsAppSpringApplication     | (    61) | Started HotelsAppSpringApplication in 2.764 seconds (JVM running for 3.379)
+2020-03-14 | 12:52:17.561 | [] |  INFO | [/]                            | (   173) | Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-14 | 12:52:17.561 | [] |  INFO | DispatcherServlet              | (   525) | Initializing Servlet 'dispatcherServlet'
+2020-03-14 | 12:52:17.566 | [] |  INFO | DispatcherServlet              | (   547) | Completed initialization in 4 ms
+2020-03-14 | 13:00:15.590 | [] |  INFO | HotelsAppSpringApplication     | (    55) | Starting HotelsAppSpringApplication on desktop_devlab with PID 7220 (X:\akademia\grupy\java11online\hotels-app-spring\target\classes started by Abc in X:\akademia\grupy\java11online\hotels-app-spring)
+2020-03-14 | 13:00:15.592 | [] | DEBUG | HotelsAppSpringApplication     | (    56) | Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-14 | 13:00:15.592 | [] |  INFO | HotelsAppSpringApplication     | (   655) | The following profiles are active: dev
+2020-03-14 | 13:00:16.169 | [] |  INFO | RepositoryConfigurationDelegate | (   249) | Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-14 | 13:00:16.170 | [] |  INFO | RepositoryConfigurationDelegate | (   127) | Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-03-14 | 13:00:16.195 | [] |  INFO | RepositoryConfigurationExtensionSupport | (   348) | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface akadamia.repositories.AddressRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-03-14 | 13:00:16.197 | [] |  INFO | RepositoryConfigurationExtensionSupport | (   348) | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface akadamia.repositories.HotelRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-03-14 | 13:00:16.198 | [] |  INFO | RepositoryConfigurationExtensionSupport | (   348) | Spring Data JDBC - Could not safely identify store assignment for repository candidate interface akadamia.repositories.RoomRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-03-14 | 13:00:16.198 | [] |  INFO | RepositoryConfigurationDelegate | (   187) | Finished Spring Data repository scanning in 25ms. Found 0 JDBC repository interfaces.
+2020-03-14 | 13:00:16.204 | [] |  INFO | RepositoryConfigurationDelegate | (   249) | Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-14 | 13:00:16.204 | [] |  INFO | RepositoryConfigurationDelegate | (   127) | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-14 | 13:00:16.226 | [] |  INFO | RepositoryConfigurationDelegate | (   187) | Finished Spring Data repository scanning in 19ms. Found 3 JPA repository interfaces.
+2020-03-14 | 13:00:16.547 | [] |  INFO | TomcatWebServer                | (    92) | Tomcat initialized with port(s): 8080 (http)
+2020-03-14 | 13:00:16.552 | [] |  INFO | StandardService                | (   173) | Starting service [Tomcat]
+2020-03-14 | 13:00:16.552 | [] |  INFO | StandardEngine                 | (   173) | Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-14 | 13:00:16.612 | [] |  INFO | [/]                            | (   173) | Initializing Spring embedded WebApplicationContext
+2020-03-14 | 13:00:16.612 | [] |  INFO | ContextLoader                  | (   284) | Root WebApplicationContext: initialization completed in 996 ms
+2020-03-14 | 13:00:16.703 | [] |  INFO | LogHelper                      | (    31) | HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-14 | 13:00:16.744 | [] |  INFO | Version                        | (    44) | HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-03-14 | 13:00:16.854 | [] |  INFO | Version                        | (    49) | HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-14 | 13:00:16.907 | [] |  INFO | HikariDataSource               | (   110) | HikariPool-1 - Starting...
+2020-03-14 | 13:00:16.978 | [] |  INFO | HikariDataSource               | (   123) | HikariPool-1 - Start completed.
+2020-03-14 | 13:00:16.988 | [] |  INFO | Dialect                        | (   172) | HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-14 | 13:00:17.515 | [] |  INFO | JtaPlatformInitiator           | (    52) | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-14 | 13:00:17.520 | [] |  INFO | LocalContainerEntityManagerFactoryBean | (   416) | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-14 | 13:00:17.861 | [] |  WARN | JpaBaseConfiguration$JpaWebConfiguration | (   220) | spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-14 | 13:00:17.982 | [] |  INFO | ThreadPoolTaskExecutor         | (   181) | Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-14 | 13:00:18.035 | [] |  WARN | Configuration$DefaultTemplateResolverConfiguration | (   106) | Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-03-14 | 13:00:18.107 | [] |  INFO | DocumentationPluginsBootstrapper | (   120) | Context refreshed
+2020-03-14 | 13:00:18.116 | [] |  INFO | DocumentationPluginsBootstrapper | (   123) | Found 1 custom documentation plugin(s)
+2020-03-14 | 13:00:18.124 | [] |  INFO | ApiListingReferenceScanner     | (    41) | Scanning for api listing references
+2020-03-14 | 13:00:18.229 | [] |  INFO | TomcatWebServer                | (   204) | Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-14 | 13:00:18.231 | [] |  INFO | HotelsAppSpringApplication     | (    61) | Started HotelsAppSpringApplication in 2.877 seconds (JVM running for 3.525)
+2020-03-14 | 13:00:27.259 | [] |  INFO | [/]                            | (   173) | Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-14 | 13:00:27.259 | [] |  INFO | DispatcherServlet              | (   525) | Initializing Servlet 'dispatcherServlet'
+2020-03-14 | 13:00:27.262 | [] |  INFO | DispatcherServlet              | (   547) | Completed initialization in 3 ms

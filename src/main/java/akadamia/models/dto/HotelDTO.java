@@ -15,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 public class HotelDTO {
   private String title;
+  private String partnerCode;
   private String country;
   private String rate;
   private AddressDTO address;

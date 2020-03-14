@@ -32,13 +32,13 @@ public class HotelDtoController implements HotelService<HotelDTO> {
   }
 
   @Override
-  @GetMapping("/hotels/{country}")
+  @GetMapping("/hotels/country/{country}")
   public List<HotelDTO> getHotelsByCountry(@PathVariable String country) {
     return hotelService.getHotelsByCountry(country);
   }
 
   @Override
-  @GetMapping("/hotels/{city}")
+  @GetMapping("/hotels/city/{city}")
   public List<HotelDTO> getHotelsByCity(@PathVariable String city) {
     return hotelService.getHotelsByCity(city);
   }
@@ -56,5 +56,10 @@ public class HotelDtoController implements HotelService<HotelDTO> {
   @Override
   public Optional<HotelDTO> getHotelByPartnerCode(String partnerCode) {
     return Optional.empty();
+  }
+
+  @Override
+  public void deleteHotelByPartnerCode(String partnerCode) {
+
   }
 }

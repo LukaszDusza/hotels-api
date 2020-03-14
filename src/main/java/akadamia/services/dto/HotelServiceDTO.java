@@ -68,4 +68,9 @@ public class HotelServiceDTO implements HotelService<HotelDTO> {
   public Optional<HotelDTO> getHotelByPartnerCode(String partnerCode) {
     return Optional.empty();
   }
+
+  @Override
+  public void deleteHotelByPartnerCode(String partnerCode) {
+
+  }
 }

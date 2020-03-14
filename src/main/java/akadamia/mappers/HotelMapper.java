@@ -33,6 +33,7 @@ public class HotelMapper implements Mapper<Hotel, HotelDTO> {
     return HotelDTO
         .builder()
         .title(from.getTitle())
+        .partnerCode(from.getPartnerCode())
         .country(from.getCountry())
         .rate(from.getRate())
         .address(addressMapper.map(from.getAddress()))
