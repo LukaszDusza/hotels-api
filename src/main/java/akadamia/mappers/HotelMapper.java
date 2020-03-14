@@ -33,6 +33,7 @@ public class HotelMapper implements Mapper<Hotel, HotelDTO> {
     return HotelDTO
         .builder()
         .title(from.getTitle())
+        .partnerCode(from.getPartnerCode())
         .country(from.getCountry())
         .rate(from.getRate())
         .address(addressMapper.map(from.getAddress()))
@@ -43,16 +44,6 @@ public class HotelMapper implements Mapper<Hotel, HotelDTO> {
   @Override
   public Hotel revers(HotelDTO to) {
     return null;
-  }
-
-  private enum RoomsToString implements Function<Room, String> {
-
-    INSTANCE;
-
-    @Override
-    public String apply(Room room) {
-      return room.toString();
-    }
   }
 
 }
