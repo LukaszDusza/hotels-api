@@ -1,11 +1,13 @@
-package akadamia.controllers;
+package akadamia.controllers.dto;
 
+import akadamia.controllers.dao.HotelController;
 import akadamia.models.dto.HotelDTO;
 import akadamia.services.HotelService;
 import akadamia.services.dto.HotelServiceDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,12 +32,14 @@ public class HotelDtoController implements HotelService<HotelDTO> {
   }
 
   @Override
-  public List<HotelDTO> getHotelsByCountry(String country) {
+  @GetMapping("/hotels/{country}")
+  public List<HotelDTO> getHotelsByCountry(@PathVariable String country) {
     return hotelService.getHotelsByCountry(country);
   }
 
   @Override
-  public List<HotelDTO> getHotelsByCity(String city) {
+  @GetMapping("/hotels/{city}")
+  public List<HotelDTO> getHotelsByCity(@PathVariable String city) {
     return hotelService.getHotelsByCity(city);
   }
 

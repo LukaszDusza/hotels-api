@@ -1,4 +1,4 @@
-package akadamia.controllers;
+package akadamia.controllers.dao;
 
 import akadamia.models.dao.Address;
 import akadamia.services.dao.AddressServiceDAO;

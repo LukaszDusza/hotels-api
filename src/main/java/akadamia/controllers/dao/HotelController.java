@@ -1,7 +1,6 @@
-package akadamia.controllers;
+package akadamia.controllers.dao;
 
 import akadamia.models.dao.Hotel;
-import akadamia.models.dto.HotelDTO;
 import akadamia.services.dao.HotelServiceDAO;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -25,7 +24,6 @@ public class HotelController {
   public HotelController(HotelServiceDAO hotelServiceDAO) {
     this.hotelServiceDAO = hotelServiceDAO;
   }
-
 
   @GetMapping("/hotels/{id}/id")
   public ResponseEntity<Hotel> getHotelById(@PathVariable Long id) {
