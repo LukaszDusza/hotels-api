@@ -1,6 +1,8 @@
 package akadamia.services.dto;
 
 import akadamia.mappers.HotelMapper;
+import akadamia.models.dao.Address;
+import akadamia.models.dao.Hotel;
 import akadamia.models.dto.HotelDTO;
 import akadamia.repositories.AddressRepository;
 import akadamia.repositories.HotelRepository;
@@ -75,7 +77,18 @@ public class HotelServiceDTO implements HotelService<HotelDTO> {
     hotelRepository.deleteHotelByPartnerCode(partnerCode);
   }
 
+  //todo zamienic na cos zgrabnieszego :)
   @Override
   public void addHotel(HotelDTO hotelDTO) {
+    Hotel hotel = new Hotel();
+    hotel.setTitle(hotelDTO.getTitle());
+    hotel.setCountry(hotelDTO.getCountry());
+    hotel.setRate(hotelDTO.getRate());
+    hotel.setPartnerCode(hotelDTO.getPartnerCode());
+    hotel.setRooms(roomRepository.findAll()); //todo trzeba zrobic konwersje dto na dao
+    Hotel result = hotelRepository.save(hotel); //to zwraca mi hotel z juz nadamy id
+    Address address = hotelMapper.getAddressFromDTO(hotelDTO.getAddress());
+    address.setHotel(result);
+    addressRepository.save(address);
   }
 }

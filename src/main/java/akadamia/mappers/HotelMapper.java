@@ -1,14 +1,14 @@
 package akadamia.mappers;
 
+import akadamia.models.dao.Address;
 import akadamia.models.dao.Hotel;
-import akadamia.models.dao.Room;
+import akadamia.models.dto.AddressDTO;
 import akadamia.models.dto.HotelDTO;
 import akadamia.models.dto.RoomDTO;
 import akadamia.utils.Mapper;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Component
@@ -43,7 +43,27 @@ public class HotelMapper implements Mapper<Hotel, HotelDTO> {
 
   @Override
   public Hotel revers(HotelDTO to) {
+//    Hotel hotel = new Hotel();
+//    Address address = getAddressFromDTO(to.getAddress());
+//    hotel.setTitle(to.getTitle());
+//    hotel.setCountry(to.getCountry());
+//    hotel.setRate(to.getRate());
+//
+//    address.
+//        hotel.setAddress();
     return null;
+  }
+
+  public Address getAddressFromDTO(AddressDTO from) {
+    Address address = new Address();
+    address.setEmail(from.getEmail());
+    address.setUrl(from.getUrl());
+    address.setPhone(from.getPhone());
+    String[] addr = from.getPostalAddress().trim().split(",");
+    address.setCity(addr[0]);
+    address.setStreet(addr[1]);
+    address.setStreetNo(addr[2]);
+    return address;
   }
 
 }
