@@ -32,7 +32,7 @@ public class HotelServiceDTO implements HotelService<HotelDTO> {
 
   @Override
   public List<HotelDTO> getHotels() {
-    return hotelRepository.findAll()
+    return hotelRepository.findAllHotels()
         .stream()
         .map(hotelMapper::map)
         .collect(Collectors.toList());
@@ -71,6 +71,6 @@ public class HotelServiceDTO implements HotelService<HotelDTO> {
 
   @Override
   public void deleteHotelByPartnerCode(String partnerCode) {
-
+    hotelRepository.deleteHotelByPartnerCode(partnerCode);
   }
 }
