@@ -58,8 +58,8 @@ public class HotelDtoController implements HotelService<HotelDTO> {
   }
 
   @Override
-  public Optional<HotelDTO> getHotelByPartnerCode(String partnerCode) {
-    return Optional.empty();
+  public HotelDTO getHotelByPartnerCode(String partnerCode) {
+    return null;
   }
 
   @Override

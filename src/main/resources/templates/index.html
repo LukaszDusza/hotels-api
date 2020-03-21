@@ -4,11 +4,10 @@
 
 <body>
 
+<div th:replace="navigation :: navi"></div>
 <div class="container">
-    <div class="row">
-
-    </div>
-    <div class="row">
+    <h4 th:if="${info}" th:text="'Zaaktualizowałeś hotel: ' + ${info}"></h4>
+    <div class="row justify-content-center align-items-center">
         <div th:replace="table :: table">
         </div>
     </div>

@@ -14,7 +14,7 @@ public interface HotelService<T> {
   List<T> getHotelsByRate(String rate);
   List<T> getHotelsByRoomType(String type);
 
-  Optional<T> getHotelByPartnerCode(String partnerCode);
+  HotelDTO getHotelByPartnerCode(String partnerCode);
 
   void deleteHotelByPartnerCode(String partnerCode);
 

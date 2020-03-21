@@ -1,5 +1,6 @@
 package akadamia.services.dto;
 
+import akadamia.exceptions.ResourceNotFoundException;
 import akadamia.mappers.HotelMapper;
 import akadamia.models.dao.Address;
 import akadamia.models.dao.Hotel;
@@ -69,8 +70,9 @@ public class HotelServiceDTO implements HotelService<HotelDTO> {
   }
 
   @Override
-  public Optional<HotelDTO> getHotelByPartnerCode(String partnerCode) {
-    return Optional.empty();
+  public HotelDTO getHotelByPartnerCode(String partnerCode) {
+    Optional<Hotel> hotel = hotelRepository.findHotelByPartnerCode(partnerCode);
+    return hotelMapper.map(hotel.get());
   }
 
   @Override
@@ -91,5 +93,17 @@ public class HotelServiceDTO implements HotelService<HotelDTO> {
     Address address = hotelMapper.getAddressFromDTO(hotelDTO.getAddress());
     address.setHotel(result);
     addressRepository.save(address);
+  }
+
+  public HotelDTO updateHotel(HotelDTO hotelDTO) {
+    System.out.println(hotelDTO);
+    Optional<Hotel> before = hotelRepository.findHotelByPartnerCode(hotelDTO.getPartnerCode());
+    before.orElseThrow(() -> new ResourceNotFoundException("Hotel not found"));
+    before.get().setTitle(hotelDTO.getTitle());
+    before.get().setCountry(hotelDTO.getCountry());
+    before.get().getAddress().setEmail(hotelDTO.getAddress().getEmail());
+    before.get().setRate(hotelDTO.getRate());
+    hotelRepository.save(before.get());
+    return hotelMapper.map(before.get());
   }
 }

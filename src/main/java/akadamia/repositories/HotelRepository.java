@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface HotelRepository extends JpaRepository<Hotel, Long> {
@@ -21,6 +22,8 @@ public interface HotelRepository extends JpaRepository<Hotel, Long> {
 
   @Query(value = "select h from Hotel h where h = (select a.hotel from Address a where a.city = ?1)") //JPQL
   List<Hotel> findHotelByAddressCity(String city);
+
+  Optional<Hotel> findHotelByPartnerCode(String partnerCode);
 
 //@Query("delete from Hotel h where h.partnerCode = :partnerCode") //JPQL
   @Transactional

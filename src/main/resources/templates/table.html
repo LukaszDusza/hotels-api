@@ -6,6 +6,7 @@
             <th>country</th>
             <th>partner code</th>
             <th>rate</th>
+            <th>email</th>
         </tr>
         </thead>
         <tbody>
@@ -14,6 +15,13 @@
             <td th:text="${h.getCountry()}"></td>
             <td th:text="${h.getPartnerCode()}"></td>
             <td th:text="${h.getRate()}"></td>
+            <td th:text="${h.getAddress().getEmail()}"></td>
+            <td>
+                <form action="/edit-page" method="get">
+                    <input type="hidden" name="uuid" th:value="${h.getPartnerCode()}">
+                <button type="submit" class="btn btn-outline-info btn-sm">edit</button>
+                </form>
+            </td>
         </tr>
         </tbody>
     </table>
