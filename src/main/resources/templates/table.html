@@ -1,25 +1,22 @@
-
 <div lang="en" xmlns:th="http://www.thymeleaf.org">
-<div class="table table-striped">
-
-</div>
-    <table class="table table-hover table-bordered table-fixed">
-        <thead>
-        <tr>
-            <th>title</th>
-            <th>country</th>
-            <th>partner code</th>
-            <th>rate</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="h : ${hotels}">
-            <td th:text="${h.getTitle()}"></td>
-            <td th:text="${h.getCountry()}"></td>
-            <td th:text="${h.getPartnerCode()}"></td>
-            <td th:text="${h.getRate()}"></td>
-        </tr>
-        </tbody>
-    </table>
-
+    <div class="table table-striped">
+        <table class="table table-hover table-bordered table-fixed">
+            <thead>
+            <tr>
+                <th>title</th>
+                <th>country</th>
+                <th>partner code</th>
+                <th>rate</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="h : ${hotels}">
+                <td th:text="${h.getTitle()}"></td>
+                <td th:text="${h.getCountry()}"></td>
+                <td th:text="${h.getPartnerCode()}"></td>
+                <td th:text="${h.getRate()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
