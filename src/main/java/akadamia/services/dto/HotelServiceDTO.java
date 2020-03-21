@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -84,7 +85,7 @@ public class HotelServiceDTO implements HotelService<HotelDTO> {
     hotel.setTitle(hotelDTO.getTitle());
     hotel.setCountry(hotelDTO.getCountry());
     hotel.setRate(hotelDTO.getRate());
-    hotel.setPartnerCode(hotelDTO.getPartnerCode());
+    hotel.setPartnerCode(UUID.randomUUID().toString());
     hotel.setRooms(roomRepository.findAll()); //todo trzeba zrobic konwersje dto na dao
     Hotel result = hotelRepository.save(hotel); //to zwraca mi hotel z juz nadamy id
     Address address = hotelMapper.getAddressFromDTO(hotelDTO.getAddress());

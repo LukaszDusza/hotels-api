@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -18,6 +20,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -44,15 +47,19 @@ public class Hotel {
   private String country;
   private String rate;
 
-//  @JsonIgnore
+  //  @JsonIgnore
   @OneToOne(mappedBy = "hotel", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private Address address;
 
-//  @JsonIgnore
+  //  @JsonIgnore
   @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
   @JoinTable(name = "hotel_room", joinColumns = @JoinColumn(name = "hotel_id"), inverseJoinColumns = @JoinColumn(name = "room_id"))
   private List<Room> rooms;
 
+  @CreationTimestamp
+  private LocalDateTime createDateTime;
 
-  //todo dodac klasę z opiniami o hotelu
+  @UpdateTimestamp
+  private LocalDateTime updateDateTime;
+
 }
