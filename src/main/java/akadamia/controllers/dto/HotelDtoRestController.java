@@ -6,6 +6,7 @@ import akadamia.services.HotelService;
 import akadamia.services.dto.HotelServiceDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,14 +19,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin //dodac gdy sie bawisz z frontendem
 @RestController
 @RequestMapping("/api/v1/dto")
-public class HotelDtoController implements HotelService<HotelDTO> {
+public class HotelDtoRestController implements HotelService<HotelDTO> {
   private static final Logger logger = LoggerFactory.getLogger(HotelController.class);
 
   private HotelServiceDTO hotelService;
 
-  public HotelDtoController(HotelServiceDTO hotelService) {
+  public HotelDtoRestController(HotelServiceDTO hotelService) {
     this.hotelService = hotelService;
   }
 
@@ -67,6 +69,11 @@ public class HotelDtoController implements HotelService<HotelDTO> {
   public void deleteHotelByPartnerCode(@RequestParam(value = "delete") String partnerCode) {
     hotelService.deleteHotelByPartnerCode(partnerCode);
 
+  }
+
+  @Override
+  public HotelDTO updateHotel(HotelDTO hotelDTO) {
+    return null;
   }
 
   @Override

@@ -33,7 +33,13 @@
                 </li>
             </ul>
             <div class="nav-item" style="float: right">
-                <a class="nav-link login" href="/signin">sign in</a>
+                <a style="color: white" class="nav-link login" href="/register">sign up</a>
+            </div>
+            <div class="nav-item" style="float: right">
+                <a style="color: white" class="nav-link login" href="/login" th:if="${login}" th:text="${login}">sign in</a>
+            </div>
+            <div class="nav-item" style="float: right">
+                <a style="color: white" class="nav-link login" href="/logout">logout</a>
             </div>
             <div class="nav-item" style="float: right">
                 <form class="form-inline my-2 my-lg-0">

@@ -6,7 +6,12 @@
 
 <div th:replace="navigation :: navi"></div>
 <div class="container">
-    <h4 th:if="${info}" th:text="'Zaaktualizowałeś hotel: ' + ${info}"></h4>
+
+    <div class="row justify-content-center align-items-center">
+        <p style="color: brown" th:if="${message}" th:text="${message}"></p>
+        <h4 th:if="${info}" th:text="'Zaaktualizowałeś hotel: ' + ${info}"></h4>
+    </div>
+
     <div class="row justify-content-center align-items-center">
         <div th:replace="table :: table">
         </div>

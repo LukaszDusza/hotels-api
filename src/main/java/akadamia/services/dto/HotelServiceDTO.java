@@ -95,6 +95,7 @@ public class HotelServiceDTO implements HotelService<HotelDTO> {
     addressRepository.save(address);
   }
 
+  @Override
   public HotelDTO updateHotel(HotelDTO hotelDTO) {
     System.out.println(hotelDTO);
     Optional<Hotel> before = hotelRepository.findHotelByPartnerCode(hotelDTO.getPartnerCode());
