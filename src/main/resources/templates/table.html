@@ -7,6 +7,11 @@
             <th>partner code</th>
             <th>rate</th>
             <th>email</th>
+            <th>
+                <form action="/new-page" method="get">
+                    <button type="submit" class="btn btn-outline-default btn-sm">new</button>
+                </form>
+            </th>
         </tr>
         </thead>
         <tbody>
@@ -19,7 +24,7 @@
             <td>
                 <form action="/edit-page" method="get">
                     <input type="hidden" name="uuid" th:value="${h.getPartnerCode()}">
-                <button type="submit" class="btn btn-outline-info btn-sm">edit</button>
+                    <button type="submit" class="btn btn-outline-info btn-sm">edit</button>
                 </form>
             </td>
         </tr>
